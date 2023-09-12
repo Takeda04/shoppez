@@ -12,6 +12,7 @@ import {
   AllProductsCard2,
   AllProductsCard3,
 } from "../../components";
+import SelectComponent from '../../UI/SelectComponent/index';
 
 function AllProducts() {
   return (
@@ -25,7 +26,7 @@ function AllProducts() {
             Featured Products <hr className="produc_section__title-hr" />
           </h2>
           <div className="produc">
-            <AllProductsCard1 />
+            <AllProductsCard3 />
           </div>
         </div>
       </section>

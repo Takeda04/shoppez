@@ -5,11 +5,16 @@ import { SelectComponent } from "../../UI";
 import { HiShoppingBag } from "react-icons/hi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaBars, FaRandom, FaHeart } from "react-icons/fa";
-
+import { useState } from "react";
 
 const Header = () => {
   const searchSelectValues = ["All Values"];
+  const [searchQuery, setSearchQuery] = useState("");
 
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+  };
   return (
     <header>
       <HeaderTop />
@@ -82,9 +87,16 @@ const Header = () => {
             // ===============================================
           }
           <div className="search-box">
-            <input type="search" placeholder="Search for products" />
+            <input
+              type="search"
+              placeholder="Search for products"
+              value={searchQuery}
+              onChange={handleInputChange}
+            />
             <div className="select-box">
-              <SelectComponent options={searchSelectValues} />
+              <SelectComponent
+                searchQuery={searchQuery}
+              />
             </div>
             <button className="search-btn">
               <BiSearch />
