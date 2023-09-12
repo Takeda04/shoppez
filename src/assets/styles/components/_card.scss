@@ -1,0 +1,209 @@
+@media only screen and (max-width: $sm) {
+  .product {
+    display: block;
+  }
+}
+
+.product {
+  gap: 20px;
+  display: flex;
+}
+
+.Product_gallery {
+  position: relative;
+  width: 467px;
+  height: 557px;
+  gap: 10px;
+  .imgIphone_14 {
+    width: 467px;
+    height: 467px;
+  }
+  .SearchIcon {
+    position: absolute;
+    right: 26px;
+    top: 26px;
+    :hover {
+      fill: rgb(53, 9, 248);
+    }
+  }
+  div {
+    display: flex;
+    width: 440px;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      outline: none;
+      border: none;
+    }
+  }
+}
+.Product_info {
+  width: 467.5px;
+  height: 699.69px;
+  gap: 20px;
+  display: block;
+  padding: 0px 20px;
+  &__top {
+    font-size: 11px;
+    font-weight: 400;
+    padding-bottom: 20px;
+  }
+  h3 {
+    color: #0077e4;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 20px 0;
+  }
+  div {
+    display: flex;
+    gap: 4px;
+    span {
+      color: #1d232c;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-left: 10px;
+    }
+  }
+  ul {
+    padding: 20px 0;
+    list-style: disc;
+    color: #586a84;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  .sku {
+    color: var(--grey-700, #586a84);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: 20px;
+    span {
+      color: var(--grey-900, #1d232c);
+      font-weight: 500;
+    }
+  }
+  .Brand {
+    color: var(--grey-900, #1d232c);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+  form {
+    padding-top: 20px;
+    label {
+      margin-top: 20px;
+      display: block;
+      color: var(--grey-900, #1d232c);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    input {
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      margin-left: 10px;
+      background: #000;
+      background-color: #403b3b;
+      border: none;
+      outline: none;
+      accent-color: red;
+      accent-color: #117eeb;
+      color: #0077e4;
+
+      // appearance: none;
+      //   --webkit-appearance:none;
+    }
+    input:checked {
+      background: #c02525;
+      content: "../../images/svg/check-lg.svg";
+      background-image: url("../../images/svg/check-lg.svg");
+      width: 20px;
+      height: 20px;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      li {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #cd2525;
+        display: flex;
+        align-items: center;
+        svg {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+.Price_and_add_to_cart {
+  width: 467.5px;
+  height: 400px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px;
+  gap: 20px;
+  border: 1px solid var(--grey-100, #eef0f4);
+  h5 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .Free {
+    color: var(--success-600, #0da678);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 9px;
+    padding: 6px 8px;
+    background: var(--success-100, #cafbec);
+  }
+  .Free_26 {
+    color: var(--danger-600, #ff316a);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 6px 8px;
+    border-radius: 9px;
+    background: var(--danger-100, #ffe5ec);
+  }
+  .price__top {
+    display: flex;
+    justify-content: space-between;
+
+    h5:nth-child(1) {
+      color: var(--grey-700, #586a84);
+    }
+    h5:nth-child(2) {
+      color: var(--success-600, #0da678);
+    }
+  }
+  .price__botton {
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e0e0;
+  }
+  .narx {
+    margin-top: 35px;
+  }
+}
