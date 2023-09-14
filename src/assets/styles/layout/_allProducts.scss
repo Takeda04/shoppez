@@ -6,7 +6,9 @@
   line-height: normal;
   text-decoration-line: none;
 }
-
+.products {
+  cursor: pointer;
+}
 .big_price_old {
   margin: 0;
   color: var(--grey-900, #1d232c);

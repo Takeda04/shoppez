@@ -1,47 +1,26 @@
-import React from "react";
-import { SelectComponent } from "../../UI";
+import React from 'react';
+import { SelectComponent } from '../../UI';
 
 const Categories = () => {
   const selectValues = [
-    [
-      "TV & Audio",
-      "Smart TVs",
-      "4K TVs",
-      "Full HD TVs",
-      "Speakers",
-      "Home Thetres",
-      "Projectors",
-    ],
+    { default: 'TV & Audio', options: ['Samsung', 'Artel', 'Huawei', 'Apple TV'] },
+    { default: 'Smart TVs', options: ['Samsung', 'Artel', 'Huawei', 'Apple TV'] },
+    { default: '4K TVs', options: ['Samsung', 'Artel', 'Huawei', 'Apple TV'] },
+    { default: 'Full HD TVs', options: ['Samsung', 'Artel', 'Huawei', 'Apple TV'] },
+    { default: 'Speakers', options: ['AitPods', 'AirPods Max', 'Huawei', 'Apple TV'] },
+    { default: 'Home Thetres', options: ['Samsung', 'Artel', 'Huawei', 'Apple TV'] },
+    { default: 'Projectors', options: ['Samsung', 'Artel', 'Huawei', 'Apple TV'] },
   ];
 
   return (
-    <div className="categories">
-      <div className="container">
-        <div className="select-boxes">
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
-          <div className="select-box">
-            <SelectComponent options={selectValues[0]} />
-          </div>
+    <div className='categories'>
+      <div className='container'>
+        <div className='select-boxes'>
+          {selectValues.map((sel, i) => (
+            <div className='select-box'>
+              <SelectComponent option={sel} i={i} />
+            </div>
+          ))}
         </div>
       </div>
     </div>

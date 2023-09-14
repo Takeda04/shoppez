@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-const Select = ({ options }) => {
+const Select = ({ option, i }) => {
   return (
-    <div className="selectBox">
-      <h1>{options[0]}</h1>
-      <ul className="selectMenu">
-        {options.map((item, index) => (
-          <li className="selectMenu_item" key={index}>
-            {item}
+    <div className='selectBox' key={i}>
+      <h1>{option.default}</h1>
+      <ul className='selectMenu'>
+        {option.options.map((op, i) => (
+          <li className='selectMenu_item' key={i}>
+            {op}
           </li>
         ))}
       </ul>

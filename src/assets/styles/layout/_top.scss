@@ -89,3 +89,15 @@
     text-decoration-line: line-through;
   }
 }
+
+.top .container,
+.top .container .option-bar,
+.top .container .right-side,
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.top .container {
+  justify-content: space-between;
+}
