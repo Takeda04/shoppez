@@ -5,6 +5,7 @@ import { FavoriteContext } from '../../contexts/favourite';
 const Index = memo(() => {
   const [buttonClasses, setButtonClasses] = useState(Array(praducts.length).fill(false)); // Use an array to track the state for each card
   const { favouriteProducts, setFavouriteProducts } = useContext(FavoriteContext);
+  const [products, setProducts] = useState(praducts);
   const handleButtonClick = idx => {
     // Toggle the state of the clicked card
     const newButtonClasses = [...buttonClasses];
@@ -17,13 +18,13 @@ const Index = memo(() => {
   };
   return (
     <>
-      {praducts.map((product, idx) => (
+      {products.map((product, idx) => (
         <div
           className={`products ${buttonClasses[idx] ? 'active' : ''}`}
           key={idx}
           onClick={() => {
             product.isLiked = !product.isLiked;
-            handleLiked(idx);
+            handleLiked();
           }}
         >
           <p className='products_title'>{product.title}</p>
