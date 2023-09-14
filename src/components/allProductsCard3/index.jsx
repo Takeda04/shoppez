@@ -1,31 +1,31 @@
-import React, { memo, useContext, useEffect, useState } from 'react';
+import React, { memo, useContext, useState } from 'react';
 import { praducts } from '../../jsonData';
 import { FavoriteContext } from '../../contexts/favourite';
+import { FaHeart } from 'react-icons/fa';
+import { ProductsContext } from '../../contexts/products';
+import { SearchedProducts } from '../../contexts/search';
 
 const Index = memo(() => {
   const [buttonClasses, setButtonClasses] = useState(Array(praducts.length).fill(false)); // Use an array to track the state for each card
-  const { favouriteProducts, setFavouriteProducts } = useContext(FavoriteContext);
+  const { setFavouriteProducts } = useContext(FavoriteContext);
+  const { searchedProducts, setSearchedProducts } = useContext(SearchedProducts);
+  const { products } = useContext(ProductsContext);
   const handleButtonClick = idx => {
-    // Toggle the state of the clicked card
     const newButtonClasses = [...buttonClasses];
     newButtonClasses[idx] = !newButtonClasses[idx];
     setButtonClasses(newButtonClasses);
   };
+
   const handleLiked = () => {
-    const arr = praducts.filter(likedProduct => likedProduct.isLiked == true);
+    const arr = products.filter(likedProduct => likedProduct.isLiked == true);
     setFavouriteProducts(arr);
   };
+
+  console.log(searchedProducts);
   return (
     <>
-      {praducts.map((product, idx) => (
-        <div
-          className={`products ${buttonClasses[idx] ? 'active' : ''}`}
-          key={idx}
-          onClick={() => {
-            product.isLiked = !product.isLiked;
-            handleLiked(idx);
-          }}
-        >
+      {(searchedProducts.length ? searchedProducts : products).map((product, idx) => (
+        <div className={`products ${buttonClasses[idx] ? 'active' : ''}`} key={idx}>
           <p className='products_title'>{product.title}</p>
           <p className='products_disc'>{product.description}</p>
           <img src={product.img} alt='product_img' className='product_img' />
@@ -39,6 +39,15 @@ const Index = memo(() => {
               onClick={() => handleButtonClick(idx)} // Pass the card index to the click handler
             >
               <img src={product.icon} alt='icon' className='products_wrapper__btn-icon' />
+            </button>
+            <button
+              className={`products_wrapper__btn1 ${product.isLiked ? 'active-liked' : ''}`}
+              onClick={() => {
+                product.isLiked = !product.isLiked;
+                handleLiked();
+              }}
+            >
+              <FaHeart />
             </button>
           </div>
         </div>

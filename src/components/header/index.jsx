@@ -5,17 +5,22 @@ import { SelectComponent } from '../../UI';
 import { HiShoppingBag } from 'react-icons/hi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaBars, FaRandom, FaHeart } from 'react-icons/fa';
-import { useContext, useEffect, useState } from 'react';
-import { praducts } from '../../jsonData';
+import { useContext, useState } from 'react';
 import { FavoriteContext } from '../../contexts/favourite';
+import { ProductsContext } from '../../contexts/products';
+import { SearchedProducts } from '../../contexts/search';
 
 const Header = () => {
   const searchSelectValues = [{ default: 'All Values', options: [] }];
+  const { setSearchedProducts } = useContext(SearchedProducts);
   const [searchQuery, setSearchQuery] = useState('');
   const { favouriteProducts } = useContext(FavoriteContext);
+  const { products } = useContext(ProductsContext);
+
   const handleInputChange = e => {
     const query = e.target.value;
     setSearchQuery(query);
+    setSearchedProducts(products.filter(product => product.description.toLowerCase().includes(query.toLowerCase())));
   };
 
   return (

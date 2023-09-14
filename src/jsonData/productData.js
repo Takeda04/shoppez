@@ -110,11 +110,11 @@ export const categories = [
   },
 ];
 
-export const praducts = [
+export let praducts = [
   {
     id: '1',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -125,7 +125,7 @@ export const praducts = [
   {
     id: '2',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Samsung iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -136,7 +136,7 @@ export const praducts = [
   {
     id: '3',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -147,7 +147,7 @@ export const praducts = [
   {
     id: '4',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -158,7 +158,7 @@ export const praducts = [
   {
     id: '5',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -169,7 +169,7 @@ export const praducts = [
   {
     id: '6',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -180,7 +180,7 @@ export const praducts = [
   {
     id: '7',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -191,7 +191,7 @@ export const praducts = [
   {
     id: '8',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -202,7 +202,7 @@ export const praducts = [
   {
     id: '9',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -213,7 +213,7 @@ export const praducts = [
   {
     id: '10',
     title: 'smartphones',
-    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1"',
+    description: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1',
     img: Iphone,
     star: Star,
     icon: Savat,
@@ -250,7 +250,7 @@ export const Carts = [
         id: 1,
         Smartphones: 'Smartphones',
         Telephones: 'Telephones',
-        Apple: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1 (Black)',
+        Apple: 'Apple iPhone 14 Pro, LTPO Super Retina XDR OLED 6.1(Black)',
       },
       { id: 2, star: 4.5, price: 200 },
       { id: 3, star: 4.5, price: 200 },

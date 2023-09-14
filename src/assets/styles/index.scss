@@ -1,4 +1,12 @@
-@import "base/index";
-@import "fonts/index";
-@import "layout/index";
-@import "components/index";
+@import 'base/index';
+@import 'fonts/index';
+@import 'layout/index';
+@import 'components/index';
+
+* {
+  outline: none;
+}
+
+.active-liked {
+  color: red;
+}
