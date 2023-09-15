@@ -1,6 +1,6 @@
 import Routes from './routes';
 import { Loader } from './components';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
   const Products = lazy(() => import('./pages/products'));
   const ProductImage = lazy(() => import('./pages/productImage'));
   const Shopping = lazy(() => import('./pages/shop'));
+  const MyCart = lazy(() => import('./pages/mycarts'));
 
   const routes = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const App = () => {
           path: '/shop',
           element: <Shopping />,
         },
+        {
+          path: '/my-carts',
+          element: <MyCart />,
+        },
       ],
     },
     {
@@ -38,6 +43,10 @@ const App = () => {
       element: <Error />,
     },
   ]);
+
+  // useEffect(() => {
+  //   alert('The site has been updated');
+  // }, []);
 
   return (
     <>

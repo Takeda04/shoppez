@@ -4,16 +4,19 @@ import { FavoriteContext } from '../../contexts/favourite';
 import { FaHeart } from 'react-icons/fa';
 import { ProductsContext } from '../../contexts/products';
 import { SearchedProducts } from '../../contexts/search';
+import { Link } from 'react-router-dom';
+import { FollowingContext } from '../../contexts/mycart';
 
 const Index = memo(() => {
-  const [buttonClasses, setButtonClasses] = useState(Array(praducts.length).fill(false)); // Use an array to track the state for each card
   const { setFavouriteProducts } = useContext(FavoriteContext);
-  const { searchedProducts, setSearchedProducts } = useContext(SearchedProducts);
   const { products } = useContext(ProductsContext);
-  const handleButtonClick = idx => {
-    const newButtonClasses = [...buttonClasses];
-    newButtonClasses[idx] = !newButtonClasses[idx];
-    setButtonClasses(newButtonClasses);
+  const { setFollowingProducts, followingProducts } = useContext(FollowingContext);
+
+  const handleButtonClick = prdct => {
+    console.log(prdct);
+    setFollowingProducts(
+      prdct.buttonClasses ? [...followingProducts, prdct] : followingProducts.filter(p => p.id != prdct.id)
+    );
   };
 
   const handleLiked = () => {
@@ -21,22 +24,26 @@ const Index = memo(() => {
     setFavouriteProducts(arr);
   };
 
-  console.log(searchedProducts);
   return (
     <>
-      {(searchedProducts.length ? searchedProducts : products).map((product, idx) => (
-        <div className={`products ${buttonClasses[idx] ? 'active' : ''}`} key={idx}>
-          <p className='products_title'>{product.title}</p>
-          <p className='products_disc'>{product.description}</p>
-          <img src={product.img} alt='product_img' className='product_img' />
+      {products.map((product, idx) => (
+        <div className={`products ${product.buttonClasses ? 'active' : ''}`} key={idx}>
+          <Link to={'products/' + product.id}>
+            <p className='products_title'>{product.title}</p>
+            <p className='products_disc'>{product.description}</p>
+            <img src={product.img} alt='product_img' className='product_img' />
+          </Link>
           <div className='products_wrapper'>
             <div className='big_wrapper'>
               <span className='big_price_new'>{product.new_price}</span>
               <span className='big_price_old'>{product.old_price}</span>
             </div>
             <button
-              className={`products_wrapper__btn1 ${buttonClasses[idx] ? 'products_wrapper__btn2' : ''}`}
-              onClick={() => handleButtonClick(idx)} // Pass the card index to the click handler
+              className={`products_wrapper__btn1 ${product.buttonClasses ? 'products_wrapper__btn2' : ''}`}
+              onClick={() => {
+                product.buttonClasses = !product.buttonClasses;
+                handleButtonClick(product);
+              }}
             >
               <img src={product.icon} alt='icon' className='products_wrapper__btn-icon' />
             </button>

@@ -180,6 +180,34 @@ header {
   width: 15px;
   height: 15px;
 }
+
+.searched-box {
+  position: relative;
+}
+
+.searched-list {
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 10000000;
+  background: #d9f9fc;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.searched-item {
+  padding: 3px 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #808080;
+  color: #000;
+}
+
+.searched-item a {
+  color: #000;
+}
+
 @media (max-width: $xl) {
   header {
     .option-bar {

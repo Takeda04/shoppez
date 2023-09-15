@@ -6,9 +6,7 @@
   line-height: normal;
   text-decoration-line: none;
 }
-.products {
-  cursor: pointer;
-}
+
 .big_price_old {
   margin: 0;
   color: var(--grey-900, #1d232c);
@@ -22,4 +20,11 @@
 .big_wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.my-cart {
+  padding: 50px 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }

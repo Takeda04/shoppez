@@ -121,6 +121,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '2',
@@ -132,6 +133,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '3',
@@ -143,6 +145,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '4',
@@ -154,6 +157,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '5',
@@ -165,6 +169,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '6',
@@ -176,6 +181,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '7',
@@ -187,6 +193,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '8',
@@ -198,6 +205,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '9',
@@ -209,6 +217,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
   {
     id: '10',
@@ -220,6 +229,7 @@ export let praducts = [
     old_price: '$1,200.00',
     new_price: '$1.000.00',
     isLiked: false,
+    buttonClasses: false,
   },
 ];
 
