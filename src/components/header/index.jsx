@@ -15,22 +15,15 @@ import { FollowingContext } from '../../contexts/mycart';
 const Header = () => {
   const searchSelectValues = [{ default: 'All Values', options: [] }];
   const { searchedProducts, setSearchedProducts } = useContext(SearchedProducts);
-  const { followingProducts } = useContext(FollowingContext);
+  const { followingPrice } = useContext(FollowingContext);
   const [searchQuery, setSearchQuery] = useState('');
   const { favouriteProducts } = useContext(FavoriteContext);
   const { products } = useContext(ProductsContext);
 
-  let num = 0;
   const handleInputChange = e => {
     const query = e.target.value;
     setSearchQuery(query);
-
     setSearchedProducts(products.filter(product => product.description.toLowerCase().includes(query.toLowerCase())));
-
-    if (!query.length) setSearchedProducts([]);
-    for (let i = 0; i < followingProducts.length; i++) {
-      num += +followingProducts[i].new_price.slice(1).replace(/\./i, '');
-    }
   };
 
   return (
@@ -114,8 +107,9 @@ const Header = () => {
               <>
                 <div className='searched-box'>
                   <ul className='searched-list'>
-                    {searchedProducts.map(search => (
+                    {searchedProducts.map((search, i) => (
                       <li
+                        key={i}
                         className='searched-item'
                         onClick={() => {
                           setSearchQuery('');
@@ -128,9 +122,7 @@ const Header = () => {
                   </ul>
                 </div>
               </>
-            ) : (
-              ''
-            )}
+            ) : null}
           </div>
 
           <ul className='inner-menu'>
@@ -157,7 +149,7 @@ const Header = () => {
               <Link to='my-carts'>
                 <span className='menu-item_tooltip'>My Cart</span>
                 <HiShoppingBag />
-                <span>{followingProducts ? '$0.00' : followingProducts}</span>
+                <span>{followingPrice ? `$${followingPrice}.00` : '$0.00'}</span>
               </Link>
             </li>
           </ul>

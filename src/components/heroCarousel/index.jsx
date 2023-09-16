@@ -44,9 +44,9 @@ export default function HeroCarousel() {
         modules={[Pagination, Autoplay]}
         className='mySwiper'
       >
-        {data.map(el => {
+        {data.map((el, i) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={i}>
               <div
                 className='hero-carousel'
                 style={{

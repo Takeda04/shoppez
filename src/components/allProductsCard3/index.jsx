@@ -10,12 +10,16 @@ import { FollowingContext } from '../../contexts/mycart';
 const Index = memo(() => {
   const { setFavouriteProducts } = useContext(FavoriteContext);
   const { products } = useContext(ProductsContext);
-  const { setFollowingProducts, followingProducts } = useContext(FollowingContext);
+  const { setFollowingProducts, followingProducts, setFollowingPrice } = useContext(FollowingContext);
 
   const handleButtonClick = prdct => {
-    console.log(prdct);
     setFollowingProducts(
       prdct.buttonClasses ? [...followingProducts, prdct] : followingProducts.filter(p => p.id != prdct.id)
+    );
+    setFollowingPrice(state =>
+      prdct.buttonClasses
+        ? (state += +prdct.new_price.slice(1).replace(/\./i, ''))
+        : (state -= +prdct.new_price.slice(1).replace(/\./i, ''))
     );
   };
 

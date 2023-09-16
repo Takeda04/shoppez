@@ -17,7 +17,7 @@ const Categories = () => {
       <div className='container'>
         <div className='select-boxes'>
           {selectValues.map((sel, i) => (
-            <div className='select-box'>
+            <div className='select-box' key={i}>
               <SelectComponent option={sel} i={i} />
             </div>
           ))}

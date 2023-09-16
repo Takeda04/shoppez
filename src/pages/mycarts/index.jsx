@@ -8,10 +8,11 @@ import { ProductsContext } from '../../contexts/products';
 const index = () => {
   const { setFavouriteProducts } = useContext(FavoriteContext);
   const { products } = useContext(ProductsContext);
-  const { followingProducts, setFollowingProducts } = useContext(FollowingContext);
+  const { followingProducts, setFollowingProducts, setFollowingPrice } = useContext(FollowingContext);
 
-  const handleButtonClick = id => {
-    setFollowingProducts(followingProducts.filter(product => product.id != id || product.buttonClasses != false));
+  const handleButtonClick = prdct => {
+    setFollowingProducts(followingProducts.filter(product => product.id != prdct.id || product.buttonClasses != false));
+    setFollowingPrice(state => (state -= +prdct.new_price.slice(1).replace(/\./i, '')));
   };
 
   const handleLiked = () => {
@@ -37,7 +38,7 @@ const index = () => {
               className={`products_wrapper__btn1 ${product.buttonClasses ? 'products_wrapper__btn2' : ''}`}
               onClick={() => {
                 product.buttonClasses = false;
-                handleButtonClick(product.id);
+                handleButtonClick(product);
               }}
             >
               <img src={product.icon} alt='icon' className='products_wrapper__btn-icon' />
